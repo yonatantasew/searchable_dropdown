@@ -152,8 +152,7 @@ class _SearchableRequestDropdownState<T>
                           style: const TextStyle(fontSize: 16)),
                     ),
                     onTap: () {
-                      _controller.text = utf8.decode(
-                          suggestion.codeUnits);
+                      _controller.text = _decodeData(suggestion);
                       widget.onChanged(suggestion);
                       setState(() {
                         _suggestions = [];
