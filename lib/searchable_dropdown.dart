@@ -36,7 +36,6 @@ class _SearchableRequestDropdownState<T>
   final LayerLink _layerLink = LayerLink();
   List<String> _suggestions = [];
   bool _isLoading = false;
-  bool _isDropdownVisible = false;
   OverlayEntry? _suggestionsOverlayEntry;
   OverlayEntry? _loadingOverlayEntry;
   Timer? _debounce; // Timer for the debouncer
@@ -53,7 +52,6 @@ class _SearchableRequestDropdownState<T>
         _fetchSuggestions('');
       } else {
         setState(() {
-          _isDropdownVisible = false; // Hide the dropdown when unfocused
           _removeSuggestionsOverlay();
         });
       }
